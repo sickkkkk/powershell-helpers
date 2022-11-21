@@ -27,6 +27,6 @@ for ($i = 0;$i -lt $dirlist.Count;$i++) {
 
 # upload to s3
 for ($i = 0;$i -lt $dirMapping.Count;$i++) {
-    $args = "s3 sync $($dirMapping[$i].path) $($dirMapping[$i].s3bucket)"
-    Start-Process "aws" -ArgumentList $args -Wait
+    $cmdArgs = "s3 sync $($dirMapping[$i].path) $($dirMapping[$i].s3bucket)"
+    Start-Process "aws" -ArgumentList $cmdArgs -Wait
 }
